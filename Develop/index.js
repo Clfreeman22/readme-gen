@@ -69,6 +69,12 @@ const questions = () => {
             choices: ['MIT', 'ISC', 'GNU GPLv3', 'None']
         },
         {
+            type: 'confirm',
+            name: 'confirmContributers',
+            message: 'Allow other contributors?',
+            default: true
+        },
+        {
             type: 'input',
             name: 'contributing',
             message: 'Provide contributing information.',
@@ -138,8 +144,26 @@ const questions = () => {
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(questions)
+    .then(readmeData => {
+        return readmeData;
+    });
+}
 
 // Function call to initialize app
-init();
+init()
+.then(readmeData => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+})
+.then(pageMarkdown => {
+    return writeFile(pageMarkdown);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+});;
 
