@@ -38,38 +38,94 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'What are the steps required to install your project?'
+            message: 'What are the steps required to install your project?',
+            validate: installInput => {
+                if (installInput) {
+                    return true;
+                } 
+                else {
+                    console.log('Please enter your installation instructions');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide instructions and examples for use.'
+            message: 'Provide instructions and examples for use.',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your use examples');
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
             name: 'license',
             message: 'Choose a license to use for this project',
-            choices: ['MIT', 'ISC', 'GNU GPLv3']
+            choices: ['MIT', 'ISC', 'GNU GPLv3', 'None']
         },
         {
             type: 'input',
             name: 'contributing',
-            message: 'Provide contributing information.'
+            message: 'Provide contributing information.',
+            when: ({ confirmContributers }) => {
+                if (confirmContributers) {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
+            validate: contributerInput => {
+                if (contributerInput) {
+                    return true;
+                } else {
+                    console.log('Please enter contributer guidelines');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'tests',
-            message: 'Provide instructions for testing.'
+            message: 'Provide instructions for testing.',
+            validate: testInput => {
+                if (testInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your use test instructions');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Provide your github username.'
+            message: 'Provide your github username.',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Provide your Email address for questions.'
+            message: 'Provide your Email address for questions.',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email address');
+                    return false;
+                }
+            }
         }
     ])
     .then(readmeData => {
