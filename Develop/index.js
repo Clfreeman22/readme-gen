@@ -63,8 +63,8 @@ const questions = [
             }
         },
         {
-            type: 'checkbox',
-            name: 'license',
+            type: 'list',
+            name: 'licenseInfo',
             message: 'Choose a license to use for this project',
             choices: ['MIT', 'ISC', 'GNU GPLv3', 'None']
         },
