@@ -1,5 +1,5 @@
 
-  # test
+  # Test Mod 9
   ## [Description](#table-of-contents)
   * [Installation](#installation)
   * [Usage](#usage)
@@ -8,14 +8,14 @@
   
     ## [License](#table-of-contents)
     Covered under the following license:
-    https://choosealicense.com/licenses/mit/
+     
       
   
   ## [Installation](#table-of-contents)
-  test
+  learn node
 
   ## [Usage](#table-of-contents)
-  test
+  run node index.js then answer command prompts
   
 
   ## [Contributing](#table-of-contents)
@@ -28,6 +28,6 @@
   
   ## [Questions](#table-of-contents)
   Contact me:
-  [Github](https://github.com/test)
-  [Email: test](mailto:test)
+  [Github](https://github.com/clfreeman22)
+  [Email: clfreeman22@gmail.com](mailto:clfreeman22@gmail.com)
   
