@@ -1,11 +1,17 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    if (license !== 'no license') {
-      return `
-    ![badge](https://img.shields.io/badge/license-${license}-blue)
-      `;
-    } else {
+  let licenseBadge = '';
+    if (license === 'MIT') {
+      licenseBadge = 'https://img.shields.io/badge/License-MIT-yellow.svg';
+      return licenseBadge;
+    } else if (license === 'GNU GPLv3') {
+      licenseBadge = 'https://img.shields.io/badge/License-GPLv3-blue.svg';
+      return licenseBadge;
+    } else if (license === 'ISC') {
+      licenseBadge = 'https://img.shields.io/badge/License-ISC-blue.svg';
+      return licenseBadge;
+    }else {
       return ' ';
     }  
 }
@@ -13,13 +19,19 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== 'no license') {
-    return `
-    [${license}](https://choosealicense.com/licenses/${license})
-      `;
-    } else {
-      return ' ';
-    }
+  let licenseLink = '';
+  if (license === 'MIT') {
+    licenseLink = `https://choosealicense.com/licenses/mit/`;
+    return licenseLink;
+  } else if (license === 'GNU GPLv3') {
+    licenseLink = `https://choosealicense.com/licenses/gpl-3.0/`;
+    return licenseLink;
+  } else if (license === 'ISC') {
+    licenseLink = `https://choosealicense.com/licenses/isc/`;
+    return licenseLink;
+  }else {
+    return ' ';
+  }  
 }
 
 // TODO: Create a function that returns the license section of README
